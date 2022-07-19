@@ -1,0 +1,37 @@
+---
+---
+
+<!DOCTYPE html>
+<html class="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title == "Home" %}
+        {{ site.title }}
+      {% else %}
+        {{ page.title }} | {{ site.title }}
+      {% endif %}
+    </title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    {% feed_meta %}
+
+    <meta name="author" content="{{ site.author }}">
+  
+    <meta property="og:locale" content="en_US">
+    
+    <meta name="description" content="{{ site.description }}">
+  
+    <meta property="og:description" content="{{ site.description }}">
+  
+    <meta property="og:site_name" content="{{ site.title }}">
+  </head>
+  <body>
+    <div class="site-container">
+      {% include header.html %}
+      {{ content }}
+      {% include footer.html %}
+    </div>
+  </body>
+</html>
